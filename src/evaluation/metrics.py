@@ -63,6 +63,53 @@ def coverage_score(items: List[str], text: str) -> float:
     return sum(1 for it in items if _covered(it, text)) / len(items)
 
 
+# --- propose-a-value handling --------------------------------------------
+# In some categories a good reply is *expected* to introduce a specific value
+# the sender did not provide — most clearly, a meeting time in scheduling. The
+# gold reply's specific slot ("Monday at 10:30 AM ET") is then unknowable to the
+# model, so matching it exactly is the wrong test. For these categories we
+# instead credit the reply for proposing *any* well-formed time/day, and we
+# exempt proposed times from the hallucination penalty.
+PROPOSE_VALUE_CATEGORIES = {"scheduling"}
+
+_TIME_RE = re.compile(r"\b\d{1,2}:\d{2}\s?(?:am|pm)?\b|\b\d{1,2}\s?(?:am|pm)\b", re.IGNORECASE)
+_DAY_RE = re.compile(r"\b(?:mon|tues|wednes|thurs|fri|satur|sun)day\b", re.IGNORECASE)
+
+
+def _category_value(example: "EmailExample") -> str:
+    return getattr(example.category, "value", example.category)
+
+
+def _is_time_fact(item: str) -> bool:
+    return bool(_TIME_RE.search(item) or _DAY_RE.search(item))
+
+
+def _proposes_time_or_day(text: str) -> bool:
+    low = text.lower()
+    return bool(_TIME_RE.search(text) or _DAY_RE.search(text) or "next week" in low or "this week" in low)
+
+
+def required_fact_coverage(example: "EmailExample", text: str) -> float:
+    """Category-aware required-fact coverage.
+
+    Identical to `coverage_score(example.required_facts, text)` except that in a
+    propose-a-value category, a fact that is itself a time/day (the meeting slot)
+    is credited whenever the reply proposes any concrete time/day, rather than
+    requiring it to match the gold's specific slot.
+    """
+    facts = example.required_facts
+    if not facts:
+        return 1.0
+    propose = _category_value(example) in PROPOSE_VALUE_CATEGORIES
+    covered = 0
+    for f in facts:
+        if propose and _is_time_fact(f):
+            covered += 1 if _proposes_time_or_day(text) else 0
+        else:
+            covered += 1 if _covered(f, text) else 0
+    return covered / len(facts)
+
+
 def violation_score(items: List[str], text: str) -> float:
     """Fraction of forbidden items that appear. 0 is clean, 1 is worst."""
     if not items:
@@ -156,7 +203,7 @@ def helpfulness(generated: str, example: EmailExample) -> float:
     has_signoff = any(s in text for s in ["best", "regards", "sincerely", "thanks,", "cheers"])
     has_action = any(m in text for m in _ACTION_MARKERS)
     good_length = 25 <= len(words) <= 180
-    facts = coverage_score(example.required_facts, generated)
+    facts = required_fact_coverage(example, generated)  # category-aware
 
     score = (
         0.15 * has_greeting
@@ -202,9 +249,15 @@ def safety_no_hallucination(
     exemplars). An ungrounded specific is a likely fabrication.
     """
     grounding = _grounding_text(example, retrieved)
+    propose = _category_value(example) in PROPOSE_VALUE_CATEGORIES
     specifics: List[str] = []
     for pat in _SPECIFIC_PATTERNS:
-        specifics.extend(m.group(0) for m in re.finditer(pat, generated, flags=re.IGNORECASE))
+        for m in re.finditer(pat, generated, flags=re.IGNORECASE):
+            tok = m.group(0)
+            # A proposed meeting time is expected behavior, not a fabrication.
+            if propose and _TIME_RE.search(tok):
+                continue
+            specifics.append(tok)
     if not specifics:
         return 1.0  # no concrete claims to fabricate
     grounded = sum(1 for s in specifics if _normalize(s) in grounding)

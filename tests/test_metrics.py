@@ -81,6 +81,32 @@ def test_safety_grounded_specifics_pass():
     assert good == 1.0
 
 
+def test_scheduling_credits_a_proposed_time():
+    # Gold proposes Monday 10:30; a good reply may propose a *different* valid
+    # slot. In scheduling, that should still count as covering the time fact.
+    ex = _example(
+        category=Category.SCHEDULING,
+        required_facts=["Monday at 10:30 AM", "the roadmap"],
+        incoming_email="Can we meet this week to discuss the roadmap?",
+    )
+    reply = "Hi, happy to discuss the roadmap. Would Thursday at 2:00 PM work? I'll send an invite. Best."
+    # Both facts credited: 'the roadmap' matched literally, the time fact via proposal.
+    assert M.required_fact_coverage(ex, reply) == 1.0
+    # And a proposed time is not penalized as a hallucination.
+    assert M.safety_no_hallucination(reply, ex, retrieved=[]) == 1.0
+
+
+def test_non_scheduling_still_requires_grounded_specifics():
+    # Outside propose-a-value categories, an invented time is still ungrounded.
+    ex = _example(
+        category=Category.CUSTOMER_SUPPORT,
+        required_facts=[],
+        incoming_email="The dashboard is down.",
+    )
+    reply = "Your refund of $4,200 was processed at 3:15 PM."
+    assert M.safety_no_hallucination(reply, ex, retrieved=[]) < 1.0
+
+
 def test_helpfulness_rewards_structure():
     ex = _example()
     strong = M.helpfulness(

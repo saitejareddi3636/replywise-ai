@@ -173,6 +173,8 @@ Implemented in `src/evaluation/metrics.py` and combined in `src/evaluation/evalu
 | **Safety / no hallucination** | Are concrete specifics grounded? | Extract high-risk specifics (amounts, ticket/invoice numbers, times, %), check each appears in the incoming email, required facts, or retrieved context. |
 | **LLM-as-judge** *(optional)* | Holistic second opinion | A model returns strict JSON scores + reasoning. Off by default; degrades to `None` without a key. |
 
+**Category-aware grounding (propose-a-value tasks).** Some categories expect the reply to *introduce* a value the sender never gave — most clearly a meeting time in `scheduling`. For those categories, required-fact coverage credits the reply for proposing *any* well-formed time/day (rather than matching the gold's unknowable specific slot), and the hallucination check exempts proposed times. This is scoped to `PROPOSE_VALUE_CATEGORIES` in `metrics.py` so grounding stays strict everywhere else (an invented invoice total is still a violation).
+
 **Final score (weighted):**
 
 ```
@@ -243,25 +245,28 @@ core intent.
 Aggregate summary — **Groq `llama-3.3-70b-versatile` + real `all-MiniLM-L6-v2` embeddings**, 33 held-out test emails:
 
 ```
-Average score : 0.834
-Pass rate     : 81.8% (threshold 0.70)
+Average score : 0.870
+Pass rate     : 90.9% (threshold 0.70)
 
 Per-category:
   invoice_payment        avg=0.988 pass=100%
+  scheduling             avg=0.981 pass=100%
   partnership            avg=0.970 pass=100%
   project_update         avg=0.902 pass=100%
-  recruiting             avg=0.859 pass=100%
+  recruiting             avg=0.858 pass=100%
   customer_support       avg=0.849 pass=100%
   ...
-  event_logistics        avg=0.670 pass=50%
-  scheduling             avg=0.683 pass=0%
+  event_logistics        avg=0.667 pass=25%
 
 Common failure types:
-  missing_required_facts       6
-  possible_hallucination       4
+  missing_required_facts       3
 ```
 
-**Reading the failure analysis (this is the point of the system).** The model is strong on fact-heavy categories where the required facts live in the incoming email — invoices, partnerships, project updates all pass 100%. It struggles most on **scheduling**, and the reason is illuminating: a good scheduling reply *proposes a new time*, but the gold reply's specific time (e.g. "Monday at 10:30 AM ET") is labeled a `required_fact`, and any time the model invents is flagged by the hallucination check as an ungrounded specific. So the low scheduling score is partly a **real model behavior** (it can't know our calendar) and partly a **known metric tension** for propose-a-value tasks. Surfacing exactly this kind of insight — rather than hiding it behind a single number — is what the evaluation system is for. See [Limitations](#limitations) for how to fix it (per-category grounding rules).
+**Reading the failure analysis (this is the point of the system).** The model is strong on fact-heavy categories where the required facts live in the incoming email — invoices, partnerships, project updates all pass 100%.
+
+Earlier this harness scored **scheduling at 0% pass**, and the reason was illuminating: a good scheduling reply *proposes a new time*, but the gold reply's specific slot (e.g. "Monday at 10:30 AM ET") was labeled a `required_fact`, and any time the model proposed was flagged by the hallucination check as an ungrounded specific. That is a **propose-a-value tension**: the metric was designed to catch fabricated invoice totals, and it misfired on legitimately-proposed meeting times. The fix (now implemented, see [category-aware grounding](#metrics-formulas-and-weights)) credits a scheduling reply for proposing *any* well-formed time/day and exempts proposed times from the hallucination penalty — lifting scheduling from 0.68 to 0.98 without loosening grounding anywhere else.
+
+The remaining weak spot is **event_logistics**, and it is honest to leave visible: those emails ask the assistant to *confirm* a headcount and dietary counts that only the event owner knows and that our synthetic input does not provide, so the model cannot supply them. That is a **data-availability** limit, not a metric bug — in a real deployment the assistant would have those facts. Surfacing exactly this distinction — a fixable metric tension vs. a genuine data limit — rather than hiding it behind a single number, is what the evaluation system is for.
 
 > For a zero-setup, fully deterministic run (no API key, hash-fallback embeddings) the same harness produces a **nearest-neighbor mock baseline** at ~0.79 average — a floor for any real model to beat. Swap `sentence-transformers` and a real provider back in to reproduce the numbers above.
 
@@ -366,7 +371,7 @@ replywise-ai/
 - **Tone scoring is lexicon-based** and can miss subtle or sarcastic tone; the optional LLM judge partially covers this.
 - **The hallucination check targets structured specifics** (amounts, IDs, times, percentages) — the highest-risk category — but does not catch every kind of fabricated claim.
 - **The metric has not yet been human-validated** on this repo; the [validation plan](#validating-the-metric-itself) describes exactly how to do it.
-- **Propose-a-value tasks (scheduling) are penalized by strict grounding.** When a good reply must invent a plausible new value (a meeting time), the required-fact and hallucination checks — designed to catch fabricated invoice totals and ticket numbers — misfire. The fix is per-category grounding rules: for scheduling, credit *any* well-formed proposed time and only require that the reply offers one, rather than matching the gold's specific slot. This is a concrete, scoped next step, and the failure analysis already points right at it.
+- **Propose-a-value grounding is currently scoped to scheduling.** The category-aware rule that credits a proposed time (and exempts it from the hallucination penalty) is implemented for `scheduling` only. `event_logistics` has a related but distinct issue — it asks the assistant to confirm a headcount and dietary counts the synthetic input never supplies — which is a data-availability limit rather than a metric one; the clean fix is to enrich those emails with the facts the owner would actually have, not to loosen the metric.
 
 ---
 

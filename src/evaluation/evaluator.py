@@ -32,7 +32,7 @@ class Evaluator:
 
         breakdown = MetricBreakdown(
             semantic_similarity=round(M.semantic_similarity(gen, example.gold_reply, self.embedder), 4),
-            required_fact_coverage=round(M.coverage_score(example.required_facts, gen), 4),
+            required_fact_coverage=round(M.required_fact_coverage(example, gen), 4),
             must_include_coverage=round(M.coverage_score(example.must_include, gen), 4),
             must_not_include_violation=round(M.violation_score(example.must_not_include, gen), 4),
             intent_alignment=round(M.intent_alignment(gen, example, self.embedder), 4),
