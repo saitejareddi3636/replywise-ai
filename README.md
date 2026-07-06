@@ -385,7 +385,7 @@ replywise-ai/
 
 This project was built with AI assistance, used deliberately and reviewed at every step:
 
-- **Architecture and scaffolding.** An AI coding assistant (Claude) helped lay out the module boundaries, the pydantic schemas, and the RAG + evaluation flow described above. Every design decision — the metric set, the weighting, the hard must-not-include gate, the fallback strategy — was chosen and reviewed intentionally, not accepted blindly.
+- **Architecture and scaffolding.** An AI coding assistant helped lay out the module boundaries, the pydantic schemas, and the RAG + evaluation flow described above. Every design decision — the metric set, the weighting, the hard must-not-include gate, the fallback strategy — was chosen and reviewed intentionally, not accepted blindly.
 - **Dataset generation.** The synthetic corpus is produced by a hand-designed template generator (not free-form model output), so the labels are controlled and consistent. AI assistance helped draft the per-category templates and realistic phrasing.
 - **Generation runtime.** At runtime, a generative model produces the suggested replies. The system is model-agnostic — it supports **Groq** (used for the headline results above, via `llama-3.3-70b-versatile`), Anthropic Claude, and any OpenAI-compatible endpoint — and ships with a deterministic mock so it never *requires* a paid model to run or be evaluated.
 - **Evaluation.** The metrics are deliberately mostly deterministic and human-readable so the scoring does not itself depend on an opaque model. An LLM-as-judge is offered as an *optional* cross-check, never as the sole arbiter.
