@@ -1,0 +1,2615 @@
+{
+  "num_examples": 33,
+  "average_score": 0.8343,
+  "pass_rate": 0.8182,
+  "pass_threshold": 0.7,
+  "category_scores": [
+    {
+      "category": "complaint_escalation",
+      "count": 2,
+      "average_score": 0.8528,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "customer_support",
+      "count": 3,
+      "average_score": 0.8486,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "event_logistics",
+      "count": 4,
+      "average_score": 0.6703,
+      "pass_rate": 0.5
+    },
+    {
+      "category": "follow_up",
+      "count": 4,
+      "average_score": 0.7887,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "invoice_payment",
+      "count": 6,
+      "average_score": 0.9876,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "partnership",
+      "count": 2,
+      "average_score": 0.9704,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "project_update",
+      "count": 3,
+      "average_score": 0.9017,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "recruiting",
+      "count": 3,
+      "average_score": 0.8585,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "sales_demo",
+      "count": 2,
+      "average_score": 0.7823,
+      "pass_rate": 1.0
+    },
+    {
+      "category": "scheduling",
+      "count": 4,
+      "average_score": 0.6832,
+      "pass_rate": 0.0
+    }
+  ],
+  "best_examples": [
+    {
+      "id": "ex-0211",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-1919 for $8,750 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nHana — Northwind Labs",
+      "gold_reply": "Hi Hana,\n\nThanks for flagging invoice INV-1919. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nAisha\nBilling",
+      "generated_reply": "Hi Hana,\n\nThanks for flagging invoice INV-1919. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0054",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9695 for $8,750 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nJames — Copperline",
+          "gold_reply": "Hi James,\n\nThanks for flagging invoice INV-9695. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+          "score": 0.9496
+        },
+        {
+          "id": "ex-0044",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-7576 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nPriya — Fernpath",
+          "gold_reply": "Hi Priya,\n\nThanks for flagging invoice INV-7576. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9489
+        },
+        {
+          "id": "ex-0130",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-1647 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nDaniel — Acme Retail",
+          "gold_reply": "Hi Daniel,\n\nThanks for flagging invoice INV-1647. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSofia\nBilling",
+          "score": 0.9456
+        },
+        {
+          "id": "ex-0014",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-8474 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Harbor & Co",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-8474. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nRaj\nBilling",
+          "score": 0.9449
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.998,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9654,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9944,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0140",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-4283 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nPriya — Fernpath",
+      "gold_reply": "Hi Priya,\n\nThanks for flagging invoice INV-4283. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nElena\nBilling",
+      "generated_reply": "Hi Priya,\n\nThanks for flagging invoice INV-4283. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\n[Your Name]\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0094",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-4767 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nMei — Harbor & Co",
+          "gold_reply": "Hi Mei,\n\nThanks for flagging invoice INV-4767. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSarah\nBilling",
+          "score": 0.9636
+        },
+        {
+          "id": "ex-0201",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-3395 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nAisha — Orbit Logistics",
+          "gold_reply": "Hi Aisha,\n\nThanks for flagging invoice INV-3395. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9625
+        },
+        {
+          "id": "ex-0148",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-2437 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Quill Media",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-2437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nLucas\nBilling",
+          "score": 0.9606
+        },
+        {
+          "id": "ex-0014",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-8474 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Harbor & Co",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-8474. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nRaj\nBilling",
+          "score": 0.9597
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9903,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.968,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9933,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0193",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-2347 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nJames — Brightpath",
+      "gold_reply": "Hi James,\n\nThanks for flagging invoice INV-2347. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nJames\nBilling",
+      "generated_reply": "Hi James,\n\nThanks for flagging invoice INV-2347. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\n[Your Name]\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0024",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9758 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Quill Media",
+          "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-9758. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nMei\nBilling",
+          "score": 0.9775
+        },
+        {
+          "id": "ex-0148",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-2437 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Quill Media",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-2437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nLucas\nBilling",
+          "score": 0.9737
+        },
+        {
+          "id": "ex-0044",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-7576 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nPriya — Fernpath",
+          "gold_reply": "Hi Priya,\n\nThanks for flagging invoice INV-7576. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9719
+        },
+        {
+          "id": "ex-0094",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-4767 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nMei — Harbor & Co",
+          "gold_reply": "Hi Mei,\n\nThanks for flagging invoice INV-4767. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSarah\nBilling",
+          "score": 0.9716
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9865,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9669,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9923,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0122",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-8372 for $5,000 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nTom — Orbit Logistics",
+      "gold_reply": "Hi Tom,\n\nThanks for flagging invoice INV-8372. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSofia\nBilling",
+      "generated_reply": "Hi Tom,\n\nThanks for flagging invoice INV-8372. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nAlex\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0113",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-7437 for $5,000 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nAisha — Acme Retail",
+          "gold_reply": "Hi Aisha,\n\nThanks for flagging invoice INV-7437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nCarlos\nBilling",
+          "score": 0.9636
+        },
+        {
+          "id": "ex-0014",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-8474 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Harbor & Co",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-8474. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nRaj\nBilling",
+          "score": 0.9617
+        },
+        {
+          "id": "ex-0084",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-1741 for $5,000 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nLucas — Lumen Health",
+          "gold_reply": "Hi Lucas,\n\nThanks for flagging invoice INV-1741. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nTom\nBilling",
+          "score": 0.9524
+        },
+        {
+          "id": "ex-0054",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9695 for $8,750 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nJames — Copperline",
+          "gold_reply": "Hi James,\n\nThanks for flagging invoice INV-9695. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+          "score": 0.9523
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9977,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9453,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9913,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0074",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-7844 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Copperline",
+      "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-7844. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+      "generated_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-7844. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nElena\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0034",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-6926 for $2,400 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Copperline",
+          "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-6926. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $2,400. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nElena\nBilling",
+          "score": 0.9778
+        },
+        {
+          "id": "ex-0024",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9758 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Quill Media",
+          "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-9758. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nMei\nBilling",
+          "score": 0.9661
+        },
+        {
+          "id": "ex-0094",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-4767 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nMei — Harbor & Co",
+          "gold_reply": "Hi Mei,\n\nThanks for flagging invoice INV-4767. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSarah\nBilling",
+          "score": 0.964
+        },
+        {
+          "id": "ex-0148",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-2437 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Quill Media",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-2437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nLucas\nBilling",
+          "score": 0.9629
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9996,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9378,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9906,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    }
+  ],
+  "worst_examples": [
+    {
+      "id": "ex-0077",
+      "category": "event_logistics",
+      "incoming_email": "Hi,\n\nI'm finalizing details for the workshop. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nElena",
+      "gold_reply": "Hi Elena,\n\nConfirmed for the workshop: we're expecting 40 attendees, and the start time is 10:30 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nLucas",
+      "generated_reply": "Hi Elena,\n\nTo confirm the details for the workshop, could you please provide me with more information about the specific workshop you are referring to, such as the date or location? This will help me provide you with the most accurate information regarding headcount, start time, and dietary accommodations.\n\nBest,\nSarah",
+      "retrieved_examples": [
+        {
+          "id": "ex-0067",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the workshop. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nSofia",
+          "gold_reply": "Hi Sofia,\n\nConfirmed for the workshop: we're expecting 40 attendees, and the start time is 4:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Wednesday. Let me know if the caterer needs anything else from us.\n\nBest,\nSarah",
+          "score": 0.9979
+        },
+        {
+          "id": "ex-0097",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the workshop. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nConfirmed for the workshop: we're expecting 12 attendees, and the start time is 4:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Monday. Let me know if the caterer needs anything else from us.\n\nBest,\nSarah",
+          "score": 0.9972
+        },
+        {
+          "id": "ex-0179",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nHana",
+          "gold_reply": "Hi Hana,\n\nConfirmed for the customer summit: we're expecting 60 attendees, and the start time is 10:30 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Thursday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9105
+        },
+        {
+          "id": "ex-0007",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nElena",
+          "gold_reply": "Hi Elena,\n\nConfirmed for the customer summit: we're expecting 12 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nCarlos",
+          "score": 0.9096
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.5093,
+        "required_fact_coverage": 0.0,
+        "must_include_coverage": 0.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.6637,
+        "tone_match": 1.0,
+        "helpfulness": 0.7,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.5564,
+      "passed": false,
+      "explanation": "Final score 0.56 (FAIL, threshold 0.70). Poor fact coverage (0%); key details are absent. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0160",
+      "category": "event_logistics",
+      "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nOmar",
+      "gold_reply": "Hi Omar,\n\nConfirmed for the customer summit: we're expecting 12 attendees, and the start time is 1:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Monday. Let me know if the caterer needs anything else from us.\n\nBest,\nBen",
+      "generated_reply": "Hi Omar,\n\nConfirmed for the customer summit: we're expecting attendees, and the start time is. Please plan for dietary accommodations. I'll share the final rooming and agenda by. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+      "retrieved_examples": [
+        {
+          "id": "ex-0027",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nJames",
+          "gold_reply": "Hi James,\n\nConfirmed for the customer summit: we're expecting 25 attendees, and the start time is 2:30 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Tuesday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9989
+        },
+        {
+          "id": "ex-0188",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nTom",
+          "gold_reply": "Hi Tom,\n\nConfirmed for the customer summit: we're expecting 40 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9987
+        },
+        {
+          "id": "ex-0007",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nElena",
+          "gold_reply": "Hi Elena,\n\nConfirmed for the customer summit: we're expecting 12 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nCarlos",
+          "score": 0.9984
+        },
+        {
+          "id": "ex-0179",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nHana",
+          "gold_reply": "Hi Hana,\n\nConfirmed for the customer summit: we're expecting 60 attendees, and the start time is 10:30 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Thursday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.996
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.8644,
+        "required_fact_coverage": 0.0,
+        "must_include_coverage": 0.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.7623,
+        "tone_match": 1.0,
+        "helpfulness": 0.7,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.6422,
+      "passed": false,
+      "explanation": "Final score 0.64 (FAIL, threshold 0.70). Poor fact coverage (0%); key details are absent. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0163",
+      "category": "scheduling",
+      "incoming_email": "Hi Tom,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nSofia",
+      "gold_reply": "Hi Sofia,\n\nHappy to meet about the integration review. Friday at 9:00 AM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nTom",
+      "generated_reply": "Hi Sofia,\n\nHappy to meet about the integration review. Wednesday at 2:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nTom",
+      "retrieved_examples": [
+        {
+          "id": "ex-0080",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Daniel,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nSofia",
+          "gold_reply": "Hi Sofia,\n\nHappy to meet about the integration review. Thursday at 2:30 PM GMT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nDaniel",
+          "score": 0.9988
+        },
+        {
+          "id": "ex-0010",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Tom,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nLucas",
+          "gold_reply": "Hi Lucas,\n\nHappy to meet about the integration review. Tuesday at 10:30 AM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nTom",
+          "score": 0.9974
+        },
+        {
+          "id": "ex-0060",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Ben,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nMei",
+          "gold_reply": "Hi Mei,\n\nHappy to meet about the integration review. Monday at 2:30 PM GMT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nBen",
+          "score": 0.9964
+        },
+        {
+          "id": "ex-0144",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Priya,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nHappy to meet about onboarding. Tuesday at 1:00 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nPriya",
+          "score": 0.6976
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9283,
+        "required_fact_coverage": 0.5,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8595,
+        "tone_match": 1.0,
+        "helpfulness": 0.85,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.6671,
+      "passed": false,
+      "explanation": "Final score 0.67 (FAIL, threshold 0.70). Partial fact coverage (50%) — some required details are missing. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0153",
+      "category": "scheduling",
+      "incoming_email": "Hi Aisha,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nJames",
+      "gold_reply": "Hi James,\n\nHappy to meet about the Q3 roadmap. Wednesday at 1:00 PM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nAisha",
+      "generated_reply": "Hi James,\n\nHappy to meet about the Q3 roadmap. Wednesday at 3:00 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nAisha",
+      "retrieved_examples": [
+        {
+          "id": "ex-0050",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Aisha,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nNina",
+          "gold_reply": "Hi Nina,\n\nHappy to meet about the Q3 roadmap. Friday at 2:30 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nAisha",
+          "score": 0.9979
+        },
+        {
+          "id": "ex-0136",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Sarah,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nTom",
+          "gold_reply": "Hi Tom,\n\nHappy to meet about the Q3 roadmap. Thursday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nSarah",
+          "score": 0.9944
+        },
+        {
+          "id": "ex-0000",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Mei,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nNina",
+          "gold_reply": "Hi Nina,\n\nHappy to meet about the Q3 roadmap. Thursday at 9:00 AM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nMei",
+          "score": 0.9938
+        },
+        {
+          "id": "ex-0100",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Hana,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nRaj",
+          "gold_reply": "Hi Raj,\n\nHappy to meet about the Q3 roadmap. Monday at 2:30 PM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nHana",
+          "score": 0.993
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9574,
+        "required_fact_coverage": 0.5,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8799,
+        "tone_match": 1.0,
+        "helpfulness": 0.85,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.676,
+      "passed": false,
+      "explanation": "Final score 0.68 (FAIL, threshold 0.70). Partial fact coverage (50%) — some required details are missing. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0172",
+      "category": "scheduling",
+      "incoming_email": "Hi James,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nMei",
+      "gold_reply": "Hi Mei,\n\nHappy to meet about onboarding. Tuesday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nJames",
+      "generated_reply": "Hi Mei,\n\nHappy to meet about onboarding. Friday at 2:00 PM works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nJames",
+      "retrieved_examples": [
+        {
+          "id": "ex-0182",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Mei,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nJames",
+          "gold_reply": "Hi James,\n\nHappy to meet about onboarding. Thursday at 9:00 AM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nMei",
+          "score": 0.9995
+        },
+        {
+          "id": "ex-0040",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Sofia,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nHappy to meet about onboarding. Wednesday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nSofia",
+          "score": 0.9964
+        },
+        {
+          "id": "ex-0020",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Sofia,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nOmar",
+          "gold_reply": "Hi Omar,\n\nHappy to meet about onboarding. Thursday at 4:00 PM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nSofia",
+          "score": 0.9962
+        },
+        {
+          "id": "ex-0144",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Priya,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nHappy to meet about onboarding. Tuesday at 1:00 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nPriya",
+          "score": 0.9961
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9601,
+        "required_fact_coverage": 0.5,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 1.0,
+        "tone_match": 1.0,
+        "helpfulness": 0.85,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.6945,
+      "passed": false,
+      "explanation": "Final score 0.69 (FAIL, threshold 0.70). Partial fact coverage (50%) — some required details are missing. Possible ungrounded specifics detected (safety 0%)."
+    }
+  ],
+  "common_failure_types": {
+    "missing_required_facts": 6,
+    "possible_hallucination": 4
+  },
+  "results": [
+    {
+      "id": "ex-0107",
+      "category": "complaint_escalation",
+      "incoming_email": "This is the third time I've written about the API gateway losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nAisha",
+      "gold_reply": "Hi Aisha,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #89084 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nCarlos\nCustomer Success",
+      "generated_reply": "Hi Aisha,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\n[Your Name]\nCustomer Success",
+      "retrieved_examples": [
+        {
+          "id": "ex-0214",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the API gateway losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nMei",
+          "gold_reply": "Hi Mei,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #77929 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nBen\nCustomer Success",
+          "score": 0.994
+        },
+        {
+          "id": "ex-0068",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the API gateway losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nPriya",
+          "gold_reply": "Hi Priya,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #23733 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nDaniel\nCustomer Success",
+          "score": 0.9934
+        },
+        {
+          "id": "ex-0048",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the API gateway losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nBen",
+          "gold_reply": "Hi Ben,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #13669 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nElena\nCustomer Success",
+          "score": 0.9932
+        },
+        {
+          "id": "ex-0161",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the billing portal losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nElena",
+          "gold_reply": "Hi Elena,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #75336 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nDaniel\nCustomer Success",
+          "score": 0.7087
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9926,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.7015,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8554,
+      "passed": true,
+      "explanation": "Final score 0.86 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0047",
+      "category": "event_logistics",
+      "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nMei",
+      "gold_reply": "Hi Mei,\n\nConfirmed for the customer summit: we're expecting 25 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Monday. Let me know if the caterer needs anything else from us.\n\nBest,\nMei",
+      "generated_reply": "Hi Mei,\n\nConfirmed for the customer summit: we're expecting [number] attendees, and the start time is [time]. Please plan for [number] vegetarian and [number] gluten-free meals. I'll share the final rooming and agenda by [day]. Let me know if the caterer needs anything else from us.\n\nBest,\n[Your Name]",
+      "retrieved_examples": [
+        {
+          "id": "ex-0188",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nTom",
+          "gold_reply": "Hi Tom,\n\nConfirmed for the customer summit: we're expecting 40 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9991
+        },
+        {
+          "id": "ex-0027",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nJames",
+          "gold_reply": "Hi James,\n\nConfirmed for the customer summit: we're expecting 25 attendees, and the start time is 2:30 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Tuesday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9986
+        },
+        {
+          "id": "ex-0007",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nElena",
+          "gold_reply": "Hi Elena,\n\nConfirmed for the customer summit: we're expecting 12 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nCarlos",
+          "score": 0.9984
+        },
+        {
+          "id": "ex-0179",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nHana",
+          "gold_reply": "Hi Hana,\n\nConfirmed for the customer summit: we're expecting 60 attendees, and the start time is 10:30 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Thursday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9972
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9382,
+        "required_fact_coverage": 0.3333,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.6996,
+        "tone_match": 1.0,
+        "helpfulness": 0.8,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.7459,
+      "passed": true,
+      "explanation": "Final score 0.75 (PASS, threshold 0.70). Poor fact coverage (33%); key details are absent. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0123",
+      "category": "partnership",
+      "incoming_email": "Hello,\n\nI lead partnerships at Orbit Logistics. I think there's a strong fit for a co-marketing partnership with Vertex Systems around joint webinars and a referral program. Would you be open to a conversation?\n\nNina Silva",
+      "gold_reply": "Hi Nina,\n\nThanks for reaching out — a co-marketing partnership between Orbit Logistics and Vertex Systems sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Wednesday at 1:00 PM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nPriya\nPartnerships",
+      "generated_reply": "Hi Nina,\n\nThanks for reaching out — a co-marketing partnership between Orbit Logistics and Vertex Systems sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\n[Your Name]\nPartnerships",
+      "retrieved_examples": [
+        {
+          "id": "ex-0194",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Vertex Systems. I think there's a strong fit for a co-marketing partnership with Brightpath around joint webinars and a referral program. Would you be open to a conversation?\n\nPriya Khan",
+          "gold_reply": "Hi Priya,\n\nThanks for reaching out — a co-marketing partnership between Vertex Systems and Brightpath sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Thursday at 1:00 PM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nDaniel\nPartnerships",
+          "score": 0.8973
+        },
+        {
+          "id": "ex-0169",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Vertex Systems. I think there's a strong fit for a co-marketing partnership with Acme Retail around joint webinars and a referral program. Would you be open to a conversation?\n\nCarlos Chen",
+          "gold_reply": "Hi Carlos,\n\nThanks for reaching out — a co-marketing partnership between Vertex Systems and Acme Retail sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Monday at 10:30 AM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nLucas\nPartnerships",
+          "score": 0.8749
+        },
+        {
+          "id": "ex-0036",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Vertex Systems. I think there's a strong fit for a co-marketing partnership with Copperline around joint webinars and a referral program. Would you be open to a conversation?\n\nCarlos Nguyen",
+          "gold_reply": "Hi Carlos,\n\nThanks for reaching out — a co-marketing partnership between Vertex Systems and Copperline sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Friday at 4:00 PM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nCarlos\nPartnerships",
+          "score": 0.8683
+        },
+        {
+          "id": "ex-0076",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Vertex Systems. I think there's a strong fit for a co-marketing partnership with Lumen Health around joint webinars and a referral program. Would you be open to a conversation?\n\nAisha Chen",
+          "gold_reply": "Hi Aisha,\n\nThanks for reaching out — a co-marketing partnership between Vertex Systems and Lumen Health sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Wednesday at 4:00 PM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nOmar\nPartnerships",
+          "score": 0.8648
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9661,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8999,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9782,
+      "passed": true,
+      "explanation": "Final score 0.98 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0122",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-8372 for $5,000 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nTom — Orbit Logistics",
+      "gold_reply": "Hi Tom,\n\nThanks for flagging invoice INV-8372. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSofia\nBilling",
+      "generated_reply": "Hi Tom,\n\nThanks for flagging invoice INV-8372. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nAlex\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0113",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-7437 for $5,000 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nAisha — Acme Retail",
+          "gold_reply": "Hi Aisha,\n\nThanks for flagging invoice INV-7437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nCarlos\nBilling",
+          "score": 0.9636
+        },
+        {
+          "id": "ex-0014",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-8474 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Harbor & Co",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-8474. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nRaj\nBilling",
+          "score": 0.9617
+        },
+        {
+          "id": "ex-0084",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-1741 for $5,000 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nLucas — Lumen Health",
+          "gold_reply": "Hi Lucas,\n\nThanks for flagging invoice INV-1741. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $5,000. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nTom\nBilling",
+          "score": 0.9524
+        },
+        {
+          "id": "ex-0054",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9695 for $8,750 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nJames — Copperline",
+          "gold_reply": "Hi James,\n\nThanks for flagging invoice INV-9695. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+          "score": 0.9523
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9977,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9453,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9913,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0082",
+      "category": "customer_support",
+      "incoming_email": "Hi support,\n\nthe Analytics dashboard has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nJames",
+      "gold_reply": "Hi James,\n\nSorry for the disruption — I've opened ticket #19269 and our team is investigating the Analytics dashboard syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nMei\nCustomer Support",
+      "generated_reply": "Hi James,\n\nSorry for the disruption — I've opened a ticket and our team is investigating the Analytics dashboard syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\n[Your Name]\nCustomer Support",
+      "retrieved_examples": [
+        {
+          "id": "ex-0146",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe Analytics dashboard has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nOmar",
+          "gold_reply": "Hi Omar,\n\nSorry for the disruption — I've opened ticket #20255 and our team is investigating the Analytics dashboard syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nDaniel\nCustomer Support",
+          "score": 0.9993
+        },
+        {
+          "id": "ex-0174",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe Analytics dashboard has been logging users out since yesterday and it's blocking my team. This is urgent. Can you help?\n\nPriya",
+          "gold_reply": "Hi Priya,\n\nSorry for the disruption — I've opened ticket #74962 and our team is investigating the Analytics dashboard logging users out. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nElena\nCustomer Support",
+          "score": 0.8316
+        },
+        {
+          "id": "ex-0128",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe Analytics dashboard has been logging users out since yesterday and it's blocking my team. This is urgent. Can you help?\n\nRaj",
+          "gold_reply": "Hi Raj,\n\nSorry for the disruption — I've opened ticket #19586 and our team is investigating the Analytics dashboard logging users out. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nRaj\nCustomer Support",
+          "score": 0.8314
+        },
+        {
+          "id": "ex-0062",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe sync engine has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nSorry for the disruption — I've opened ticket #94339 and our team is investigating the sync engine syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nMei\nCustomer Support",
+          "score": 0.7252
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9322,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.6397,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8341,
+      "passed": true,
+      "explanation": "Final score 0.83 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0069",
+      "category": "follow_up",
+      "incoming_email": "Hi Aisha,\n\nJust following up on the contract draft I sent about 5 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nPriya",
+      "gold_reply": "Hi Priya,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Tuesday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nAisha",
+      "generated_reply": "Hi Priya,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you soon. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nAisha",
+      "retrieved_examples": [
+        {
+          "id": "ex-0125",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Aisha,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nRaj",
+          "gold_reply": "Hi Raj,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Friday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nAisha",
+          "score": 0.9886
+        },
+        {
+          "id": "ex-0108",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Daniel,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Thursday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nDaniel",
+          "score": 0.9886
+        },
+        {
+          "id": "ex-0049",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Elena,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Friday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nElena",
+          "score": 0.9861
+        },
+        {
+          "id": "ex-0196",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Mei,\n\nJust following up on the contract draft I sent about 14 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nSofia",
+          "gold_reply": "Hi Sofia,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Tuesday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nMei",
+          "score": 0.9823
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9946,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.5,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.3873,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8087,
+      "passed": true,
+      "explanation": "Final score 0.81 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected. Reply drifts from the sender's core intent."
+    },
+    {
+      "id": "ex-0153",
+      "category": "scheduling",
+      "incoming_email": "Hi Aisha,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nJames",
+      "gold_reply": "Hi James,\n\nHappy to meet about the Q3 roadmap. Wednesday at 1:00 PM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nAisha",
+      "generated_reply": "Hi James,\n\nHappy to meet about the Q3 roadmap. Wednesday at 3:00 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nAisha",
+      "retrieved_examples": [
+        {
+          "id": "ex-0050",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Aisha,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nNina",
+          "gold_reply": "Hi Nina,\n\nHappy to meet about the Q3 roadmap. Friday at 2:30 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nAisha",
+          "score": 0.9979
+        },
+        {
+          "id": "ex-0136",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Sarah,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nTom",
+          "gold_reply": "Hi Tom,\n\nHappy to meet about the Q3 roadmap. Thursday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nSarah",
+          "score": 0.9944
+        },
+        {
+          "id": "ex-0000",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Mei,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nNina",
+          "gold_reply": "Hi Nina,\n\nHappy to meet about the Q3 roadmap. Thursday at 9:00 AM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nMei",
+          "score": 0.9938
+        },
+        {
+          "id": "ex-0100",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Hana,\n\nCould we find 30 minutes this week to discuss the Q3 roadmap? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nRaj",
+          "gold_reply": "Hi Raj,\n\nHappy to meet about the Q3 roadmap. Monday at 2:30 PM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nHana",
+          "score": 0.993
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9574,
+        "required_fact_coverage": 0.5,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8799,
+        "tone_match": 1.0,
+        "helpfulness": 0.85,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.676,
+      "passed": false,
+      "explanation": "Final score 0.68 (FAIL, threshold 0.70). Partial fact coverage (50%) — some required details are missing. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0190",
+      "category": "scheduling",
+      "incoming_email": "Hi Carlos,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nHana",
+      "gold_reply": "Hi Hana,\n\nHappy to meet about onboarding. Thursday at 4:00 PM GMT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nCarlos",
+      "generated_reply": "Hi Hana,\n\nHappy to meet about onboarding. Wednesday at 2:00 PM works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nCarlos",
+      "retrieved_examples": [
+        {
+          "id": "ex-0207",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Carlos,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nSarah",
+          "gold_reply": "Hi Sarah,\n\nHappy to meet about onboarding. Wednesday at 9:00 AM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nCarlos",
+          "score": 0.9956
+        },
+        {
+          "id": "ex-0040",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Sofia,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nHappy to meet about onboarding. Wednesday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nSofia",
+          "score": 0.9945
+        },
+        {
+          "id": "ex-0182",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Mei,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nJames",
+          "gold_reply": "Hi James,\n\nHappy to meet about onboarding. Thursday at 9:00 AM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nMei",
+          "score": 0.9943
+        },
+        {
+          "id": "ex-0197",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Tom,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nHappy to meet about onboarding. Wednesday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nTom",
+          "score": 0.9938
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9624,
+        "required_fact_coverage": 0.5,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 1.0,
+        "tone_match": 1.0,
+        "helpfulness": 0.85,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.695,
+      "passed": false,
+      "explanation": "Final score 0.69 (FAIL, threshold 0.70). Partial fact coverage (50%) — some required details are missing. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0110",
+      "category": "recruiting",
+      "incoming_email": "Hello,\n\nI came across the Product Designer opening at Quill Media and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nSofia Rossi",
+      "gold_reply": "Hi Sofia,\n\nThanks for your interest in the Product Designer role at Quill Media. The next step is a 45-minute screening call, and I'd suggest Wednesday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nLucas\nTalent Team, Quill Media",
+      "generated_reply": "Hi Sofia,\n\nThanks for your interest in the Product Designer role at Quill Media. The next step is a 45-minute screening call. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\n[Your Name]\nTalent Team, Quill Media",
+      "retrieved_examples": [
+        {
+          "id": "ex-0001",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Northwind Labs and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nCarlos Khan",
+          "gold_reply": "Hi Carlos,\n\nThanks for your interest in the Product Designer role at Northwind Labs. The next step is a 45-minute screening call, and I'd suggest Monday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nJames\nTalent Team, Northwind Labs",
+          "score": 0.8202
+        },
+        {
+          "id": "ex-0091",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Acme Retail and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nSarah Kowalski",
+          "gold_reply": "Hi Sarah,\n\nThanks for your interest in the Product Designer role at Acme Retail. The next step is a 45-minute screening call, and I'd suggest Friday at 4:00 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nLucas\nTalent Team, Acme Retail",
+          "score": 0.8065
+        },
+        {
+          "id": "ex-0051",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Copperline and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nCarlos Andersen",
+          "gold_reply": "Hi Carlos,\n\nThanks for your interest in the Product Designer role at Copperline. The next step is a 45-minute screening call, and I'd suggest Tuesday at 4:00 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nBen\nTalent Team, Copperline",
+          "score": 0.7993
+        },
+        {
+          "id": "ex-0183",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Copperline and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nMei Okafor",
+          "gold_reply": "Hi Mei,\n\nThanks for your interest in the Product Designer role at Copperline. The next step is a 45-minute screening call, and I'd suggest Tuesday at 9:00 AM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nLucas\nTalent Team, Copperline",
+          "score": 0.7935
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.8957,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.4224,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8925,
+      "passed": true,
+      "explanation": "Final score 0.89 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected. Reply drifts from the sender's core intent."
+    },
+    {
+      "id": "ex-0081",
+      "category": "recruiting",
+      "incoming_email": "Hello,\n\nI came across the Product Designer opening at Brightpath and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nElena Garcia",
+      "gold_reply": "Hi Elena,\n\nThanks for your interest in the Product Designer role at Brightpath. The next step is a 45-minute screening call, and I'd suggest Thursday at 1:00 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nNina\nTalent Team, Brightpath",
+      "generated_reply": "Hi Elena,\n\nThanks for your interest in the Product Designer role at Brightpath. The next step is a 45-minute screening call, and I'd suggest Wednesday at 10:00 AM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nJames\nTalent Team, Brightpath",
+      "retrieved_examples": [
+        {
+          "id": "ex-0001",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Northwind Labs and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nCarlos Khan",
+          "gold_reply": "Hi Carlos,\n\nThanks for your interest in the Product Designer role at Northwind Labs. The next step is a 45-minute screening call, and I'd suggest Monday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nJames\nTalent Team, Northwind Labs",
+          "score": 0.8651
+        },
+        {
+          "id": "ex-0051",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Copperline and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nCarlos Andersen",
+          "gold_reply": "Hi Carlos,\n\nThanks for your interest in the Product Designer role at Copperline. The next step is a 45-minute screening call, and I'd suggest Tuesday at 4:00 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nBen\nTalent Team, Copperline",
+          "score": 0.8342
+        },
+        {
+          "id": "ex-0183",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Copperline and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nMei Okafor",
+          "gold_reply": "Hi Mei,\n\nThanks for your interest in the Product Designer role at Copperline. The next step is a 45-minute screening call, and I'd suggest Tuesday at 9:00 AM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nLucas\nTalent Team, Copperline",
+          "score": 0.8276
+        },
+        {
+          "id": "ex-0127",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Backend Engineer opening at Brightpath and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nSofia Rossi",
+          "gold_reply": "Hi Sofia,\n\nThanks for your interest in the Backend Engineer role at Brightpath. The next step is a 45-minute screening call, and I'd suggest Monday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nLucas\nTalent Team, Brightpath",
+          "score": 0.8192
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9474,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.4681,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.7597,
+      "passed": true,
+      "explanation": "Final score 0.76 (PASS, threshold 0.70). All required facts are present. Possible ungrounded specifics detected (safety 0%). Reply drifts from the sender's core intent."
+    },
+    {
+      "id": "ex-0154",
+      "category": "recruiting",
+      "incoming_email": "Hello,\n\nI came across the Backend Engineer opening at Fernpath and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nPriya Chen",
+      "gold_reply": "Hi Priya,\n\nThanks for your interest in the Backend Engineer role at Fernpath. The next step is a 45-minute screening call, and I'd suggest Thursday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nTom\nTalent Team, Fernpath",
+      "generated_reply": "Hi Priya,\n\nThanks for your interest in the Backend Engineer role at Fernpath. The next step is a 45-minute screening call, and I'd suggest discussing a time that works for you. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\n[Your Name]\nTalent Team, Fernpath",
+      "retrieved_examples": [
+        {
+          "id": "ex-0127",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Backend Engineer opening at Brightpath and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nSofia Rossi",
+          "gold_reply": "Hi Sofia,\n\nThanks for your interest in the Backend Engineer role at Brightpath. The next step is a 45-minute screening call, and I'd suggest Monday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nLucas\nTalent Team, Brightpath",
+          "score": 0.8673
+        },
+        {
+          "id": "ex-0071",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Backend Engineer opening at Lumen Health and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nRaj Ivanov",
+          "gold_reply": "Hi Raj,\n\nThanks for your interest in the Backend Engineer role at Lumen Health. The next step is a 45-minute screening call, and I'd suggest Monday at 10:30 AM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nNina\nTalent Team, Lumen Health",
+          "score": 0.7491
+        },
+        {
+          "id": "ex-0137",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Backend Engineer opening at Lumen Health and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nElena Andersen",
+          "gold_reply": "Hi Elena,\n\nThanks for your interest in the Backend Engineer role at Lumen Health. The next step is a 45-minute screening call, and I'd suggest Tuesday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nBen\nTalent Team, Lumen Health",
+          "score": 0.7439
+        },
+        {
+          "id": "ex-0041",
+          "category": "recruiting",
+          "intent": "explain_hiring_process",
+          "tone": "warm-professional",
+          "incoming_email": "Hello,\n\nI came across the Product Designer opening at Orbit Logistics and I'm very interested. I have five years of relevant experience. Could you tell me about the next steps and interview process?\n\nRegards,\nDaniel Garcia",
+          "gold_reply": "Hi Daniel,\n\nThanks for your interest in the Product Designer role at Orbit Logistics. The next step is a 45-minute screening call, and I'd suggest Tuesday at 2:30 PM. After that we run one technical round and a final team conversation. Could you share your availability and an updated resume?\n\nBest,\nRaj\nTalent Team, Orbit Logistics",
+          "score": 0.7161
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9076,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.6121,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9233,
+      "passed": true,
+      "explanation": "Final score 0.92 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0168",
+      "category": "project_update",
+      "incoming_email": "Hi team,\n\nCan you give me a quick status on the v2 launch? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nDaniel",
+      "gold_reply": "Hi Daniel,\n\nHere's where the v2 launch stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Thursday. No change to the timeline at this stage — I'll send the next update on Thursday.\n\nBest,\nSarah",
+      "generated_reply": "Hi Daniel,\n\nHere's where the v2 launch stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\n[Your Name]",
+      "retrieved_examples": [
+        {
+          "id": "ex-0141",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the v2 launch? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nElena",
+          "gold_reply": "Hi Elena,\n\nHere's where the v2 launch stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Wednesday. No change to the timeline at this stage — I'll send the next update on Wednesday.\n\nBest,\nTom",
+          "score": 0.9982
+        },
+        {
+          "id": "ex-0212",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the v2 launch? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nHere's where the v2 launch stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\nSofia",
+          "score": 0.9973
+        },
+        {
+          "id": "ex-0005",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the v2 launch? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nMei",
+          "gold_reply": "Hi Mei,\n\nHere's where the v2 launch stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Friday. No change to the timeline at this stage — I'll send the next update on Friday.\n\nBest,\nLucas",
+          "score": 0.9971
+        },
+        {
+          "id": "ex-0202",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the v2 launch? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nNina",
+          "gold_reply": "Hi Nina,\n\nHere's where the v2 launch stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\nPriya",
+          "score": 0.9927
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9896,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8334,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9729,
+      "passed": true,
+      "explanation": "Final score 0.97 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0172",
+      "category": "scheduling",
+      "incoming_email": "Hi James,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nMei",
+      "gold_reply": "Hi Mei,\n\nHappy to meet about onboarding. Tuesday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nJames",
+      "generated_reply": "Hi Mei,\n\nHappy to meet about onboarding. Friday at 2:00 PM works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nJames",
+      "retrieved_examples": [
+        {
+          "id": "ex-0182",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Mei,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nJames",
+          "gold_reply": "Hi James,\n\nHappy to meet about onboarding. Thursday at 9:00 AM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nMei",
+          "score": 0.9995
+        },
+        {
+          "id": "ex-0040",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Sofia,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nHappy to meet about onboarding. Wednesday at 1:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nSofia",
+          "score": 0.9964
+        },
+        {
+          "id": "ex-0020",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Sofia,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nOmar",
+          "gold_reply": "Hi Omar,\n\nHappy to meet about onboarding. Thursday at 4:00 PM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nSofia",
+          "score": 0.9962
+        },
+        {
+          "id": "ex-0144",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Priya,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nHappy to meet about onboarding. Tuesday at 1:00 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nPriya",
+          "score": 0.9961
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9601,
+        "required_fact_coverage": 0.5,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 1.0,
+        "tone_match": 1.0,
+        "helpfulness": 0.85,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.6945,
+      "passed": false,
+      "explanation": "Final score 0.69 (FAIL, threshold 0.70). Partial fact coverage (50%) — some required details are missing. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0218",
+      "category": "customer_support",
+      "incoming_email": "Hi support,\n\nthe Analytics dashboard has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nTom",
+      "gold_reply": "Hi Tom,\n\nSorry for the disruption — I've opened ticket #53976 and our team is investigating the Analytics dashboard syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nJames\nCustomer Support",
+      "generated_reply": "Hi Tom,\n\nSorry for the disruption — I've opened a ticket and our team is investigating the Analytics dashboard syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\n[Your Name]\nCustomer Support",
+      "retrieved_examples": [
+        {
+          "id": "ex-0146",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe Analytics dashboard has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nOmar",
+          "gold_reply": "Hi Omar,\n\nSorry for the disruption — I've opened ticket #20255 and our team is investigating the Analytics dashboard syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nDaniel\nCustomer Support",
+          "score": 0.999
+        },
+        {
+          "id": "ex-0174",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe Analytics dashboard has been logging users out since yesterday and it's blocking my team. This is urgent. Can you help?\n\nPriya",
+          "gold_reply": "Hi Priya,\n\nSorry for the disruption — I've opened ticket #74962 and our team is investigating the Analytics dashboard logging users out. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nElena\nCustomer Support",
+          "score": 0.8318
+        },
+        {
+          "id": "ex-0128",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe Analytics dashboard has been logging users out since yesterday and it's blocking my team. This is urgent. Can you help?\n\nRaj",
+          "gold_reply": "Hi Raj,\n\nSorry for the disruption — I've opened ticket #19586 and our team is investigating the Analytics dashboard logging users out. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nRaj\nCustomer Support",
+          "score": 0.8315
+        },
+        {
+          "id": "ex-0062",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe sync engine has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nSorry for the disruption — I've opened ticket #94339 and our team is investigating the sync engine syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nMei\nCustomer Support",
+          "score": 0.7216
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9897,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.6422,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8459,
+      "passed": true,
+      "explanation": "Final score 0.85 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0026",
+      "category": "partnership",
+      "incoming_email": "Hello,\n\nI lead partnerships at Quill Media. I think there's a strong fit for a co-marketing partnership with Acme Retail around joint webinars and a referral program. Would you be open to a conversation?\n\nHana Rossi",
+      "gold_reply": "Hi Hana,\n\nThanks for reaching out — a co-marketing partnership between Quill Media and Acme Retail sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Thursday at 2:30 PM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nHana\nPartnerships",
+      "generated_reply": "Hi Hana,\n\nThanks for reaching out — a co-marketing partnership between Quill Media and Acme Retail sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\n[Your Name]\nPartnerships",
+      "retrieved_examples": [
+        {
+          "id": "ex-0132",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Acme Retail. I think there's a strong fit for a co-marketing partnership with Acme Retail around joint webinars and a referral program. Would you be open to a conversation?\n\nAisha Silva",
+          "gold_reply": "Hi Aisha,\n\nThanks for reaching out — a co-marketing partnership between Acme Retail and Acme Retail sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Monday at 1:00 PM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nBen\nPartnerships",
+          "score": 0.9426
+        },
+        {
+          "id": "ex-0150",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Northwind Labs. I think there's a strong fit for a co-marketing partnership with Quill Media around joint webinars and a referral program. Would you be open to a conversation?\n\nNina Okafor",
+          "gold_reply": "Hi Nina,\n\nThanks for reaching out — a co-marketing partnership between Northwind Labs and Quill Media sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Tuesday at 2:30 PM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nRaj\nPartnerships",
+          "score": 0.8972
+        },
+        {
+          "id": "ex-0169",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Vertex Systems. I think there's a strong fit for a co-marketing partnership with Acme Retail around joint webinars and a referral program. Would you be open to a conversation?\n\nCarlos Chen",
+          "gold_reply": "Hi Carlos,\n\nThanks for reaching out — a co-marketing partnership between Vertex Systems and Acme Retail sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Monday at 10:30 AM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nLucas\nPartnerships",
+          "score": 0.8892
+        },
+        {
+          "id": "ex-0016",
+          "category": "partnership",
+          "intent": "explore_partnership",
+          "tone": "diplomatic-professional",
+          "incoming_email": "Hello,\n\nI lead partnerships at Lumen Health. I think there's a strong fit for a co-marketing partnership with Quill Media around joint webinars and a referral program. Would you be open to a conversation?\n\nLucas Müller",
+          "gold_reply": "Hi Lucas,\n\nThanks for reaching out — a co-marketing partnership between Lumen Health and Quill Media sounds worth exploring, especially the joint webinar idea. Could we start with a 30-minute intro call, perhaps Wednesday at 9:00 AM? Beforehand, it would help to understand your audience size and what a referral program would look like on your side.\n\nBest,\nSofia\nPartnerships",
+          "score": 0.859
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9462,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8222,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9626,
+      "passed": true,
+      "explanation": "Final score 0.96 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0193",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-2347 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nJames — Brightpath",
+      "gold_reply": "Hi James,\n\nThanks for flagging invoice INV-2347. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nJames\nBilling",
+      "generated_reply": "Hi James,\n\nThanks for flagging invoice INV-2347. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\n[Your Name]\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0024",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9758 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Quill Media",
+          "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-9758. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nMei\nBilling",
+          "score": 0.9775
+        },
+        {
+          "id": "ex-0148",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-2437 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Quill Media",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-2437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nLucas\nBilling",
+          "score": 0.9737
+        },
+        {
+          "id": "ex-0044",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-7576 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nPriya — Fernpath",
+          "gold_reply": "Hi Priya,\n\nThanks for flagging invoice INV-7576. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9719
+        },
+        {
+          "id": "ex-0094",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-4767 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nMei — Harbor & Co",
+          "gold_reply": "Hi Mei,\n\nThanks for flagging invoice INV-4767. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSarah\nBilling",
+          "score": 0.9716
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9865,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9669,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9923,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0095",
+      "category": "project_update",
+      "incoming_email": "Hi team,\n\nCan you give me a quick status on the migration? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nSarah",
+      "gold_reply": "Hi Sarah,\n\nHere's where the migration stands: we're about 70% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Monday. No change to the timeline at this stage — I'll send the next update on Monday.\n\nBest,\nJames",
+      "generated_reply": "Hi Sarah,\n\nHere's where the migration stands: we're about 60% complete and on track for launch. The one blocker is a pending security review. No change to the timeline at this stage — I'll send the next update soon.\n\nBest,\n[Your Name]",
+      "retrieved_examples": [
+        {
+          "id": "ex-0158",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the migration? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nElena",
+          "gold_reply": "Hi Elena,\n\nHere's where the migration stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Thursday. No change to the timeline at this stage — I'll send the next update on Thursday.\n\nBest,\nHana",
+          "score": 0.9979
+        },
+        {
+          "id": "ex-0045",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the migration? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nOmar",
+          "gold_reply": "Hi Omar,\n\nHere's where the migration stands: we're about 40% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\nOmar",
+          "score": 0.9945
+        },
+        {
+          "id": "ex-0075",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the migration? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nMei",
+          "gold_reply": "Hi Mei,\n\nHere's where the migration stands: we're about 40% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\nJames",
+          "score": 0.9935
+        },
+        {
+          "id": "ex-0149",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on the redesign? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nRaj",
+          "gold_reply": "Hi Raj,\n\nHere's where the redesign stands: we're about 85% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\nElena",
+          "score": 0.7189
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9719,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.6482,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8433,
+      "passed": true,
+      "explanation": "Final score 0.84 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0077",
+      "category": "event_logistics",
+      "incoming_email": "Hi,\n\nI'm finalizing details for the workshop. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nElena",
+      "gold_reply": "Hi Elena,\n\nConfirmed for the workshop: we're expecting 40 attendees, and the start time is 10:30 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nLucas",
+      "generated_reply": "Hi Elena,\n\nTo confirm the details for the workshop, could you please provide me with more information about the specific workshop you are referring to, such as the date or location? This will help me provide you with the most accurate information regarding headcount, start time, and dietary accommodations.\n\nBest,\nSarah",
+      "retrieved_examples": [
+        {
+          "id": "ex-0067",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the workshop. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nSofia",
+          "gold_reply": "Hi Sofia,\n\nConfirmed for the workshop: we're expecting 40 attendees, and the start time is 4:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Wednesday. Let me know if the caterer needs anything else from us.\n\nBest,\nSarah",
+          "score": 0.9979
+        },
+        {
+          "id": "ex-0097",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the workshop. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nConfirmed for the workshop: we're expecting 12 attendees, and the start time is 4:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Monday. Let me know if the caterer needs anything else from us.\n\nBest,\nSarah",
+          "score": 0.9972
+        },
+        {
+          "id": "ex-0179",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nHana",
+          "gold_reply": "Hi Hana,\n\nConfirmed for the customer summit: we're expecting 60 attendees, and the start time is 10:30 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Thursday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9105
+        },
+        {
+          "id": "ex-0007",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nElena",
+          "gold_reply": "Hi Elena,\n\nConfirmed for the customer summit: we're expecting 12 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nCarlos",
+          "score": 0.9096
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.5093,
+        "required_fact_coverage": 0.0,
+        "must_include_coverage": 0.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.6637,
+        "tone_match": 1.0,
+        "helpfulness": 0.7,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.5564,
+      "passed": false,
+      "explanation": "Final score 0.56 (FAIL, threshold 0.70). Poor fact coverage (0%); key details are absent. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0105",
+      "category": "project_update",
+      "incoming_email": "Hi team,\n\nCan you give me a quick status on Project Atlas? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nElena",
+      "gold_reply": "Hi Elena,\n\nHere's where Project Atlas stands: we're about 85% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Monday. No change to the timeline at this stage — I'll send the next update on Monday.\n\nBest,\nLucas",
+      "generated_reply": "Hi Elena,\n\nHere's where Project Atlas stands: we're about 70% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Friday. No change to the timeline at this stage — I'll send the next update on Friday.\n\nBest,\n[Your Name]",
+      "retrieved_examples": [
+        {
+          "id": "ex-0035",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on Project Atlas? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nSarah",
+          "gold_reply": "Hi Sarah,\n\nHere's where Project Atlas stands: we're about 70% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Friday. No change to the timeline at this stage — I'll send the next update on Friday.\n\nBest,\nLucas",
+          "score": 0.9982
+        },
+        {
+          "id": "ex-0131",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on Project Atlas? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nMei",
+          "gold_reply": "Hi Mei,\n\nHere's where Project Atlas stands: we're about 70% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\nTom",
+          "score": 0.9978
+        },
+        {
+          "id": "ex-0055",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on Project Atlas? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nRaj",
+          "gold_reply": "Hi Raj,\n\nHere's where Project Atlas stands: we're about 55% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Tuesday. No change to the timeline at this stage — I'll send the next update on Tuesday.\n\nBest,\nDaniel",
+          "score": 0.9962
+        },
+        {
+          "id": "ex-0025",
+          "category": "project_update",
+          "intent": "report_project_status",
+          "tone": "concise-professional",
+          "incoming_email": "Hi team,\n\nCan you give me a quick status on Project Atlas? Leadership is asking whether we're on track for the launch and if there are any blockers.\n\nNina",
+          "gold_reply": "Hi Nina,\n\nHere's where Project Atlas stands: we're about 85% complete and on track for launch. The one blocker is a pending security review, which we expect cleared by Friday. No change to the timeline at this stage — I'll send the next update on Friday.\n\nBest,\nMei",
+          "score": 0.996
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9911,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9264,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8889,
+      "passed": true,
+      "explanation": "Final score 0.89 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0160",
+      "category": "event_logistics",
+      "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nOmar",
+      "gold_reply": "Hi Omar,\n\nConfirmed for the customer summit: we're expecting 12 attendees, and the start time is 1:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Monday. Let me know if the caterer needs anything else from us.\n\nBest,\nBen",
+      "generated_reply": "Hi Omar,\n\nConfirmed for the customer summit: we're expecting attendees, and the start time is. Please plan for dietary accommodations. I'll share the final rooming and agenda by. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+      "retrieved_examples": [
+        {
+          "id": "ex-0027",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nJames",
+          "gold_reply": "Hi James,\n\nConfirmed for the customer summit: we're expecting 25 attendees, and the start time is 2:30 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Tuesday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9989
+        },
+        {
+          "id": "ex-0188",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nTom",
+          "gold_reply": "Hi Tom,\n\nConfirmed for the customer summit: we're expecting 40 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.9987
+        },
+        {
+          "id": "ex-0007",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nElena",
+          "gold_reply": "Hi Elena,\n\nConfirmed for the customer summit: we're expecting 12 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nCarlos",
+          "score": 0.9984
+        },
+        {
+          "id": "ex-0179",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the customer summit. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nHana",
+          "gold_reply": "Hi Hana,\n\nConfirmed for the customer summit: we're expecting 60 attendees, and the start time is 10:30 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Thursday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.996
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.8644,
+        "required_fact_coverage": 0.0,
+        "must_include_coverage": 0.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.7623,
+        "tone_match": 1.0,
+        "helpfulness": 0.7,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.6422,
+      "passed": false,
+      "explanation": "Final score 0.64 (FAIL, threshold 0.70). Poor fact coverage (0%); key details are absent. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0206",
+      "category": "follow_up",
+      "incoming_email": "Hi Tom,\n\nJust following up on the proposal I sent about 5 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nRaj",
+      "gold_reply": "Hi Raj,\n\nThanks for the nudge and apologies for the delay on the proposal. It's currently with our team for review, and I expect to have a clear answer for you by Monday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nTom",
+      "generated_reply": "Hi Raj,\n\nThanks for the nudge and apologies for the delay on the proposal. It's currently with our team for review, and I expect to have a clear answer for you soon. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nTom",
+      "retrieved_examples": [
+        {
+          "id": "ex-0171",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Elena,\n\nJust following up on the proposal I sent about 10 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nThanks for the nudge and apologies for the delay on the proposal. It's currently with our team for review, and I expect to have a clear answer for you by Wednesday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nElena",
+          "score": 0.9649
+        },
+        {
+          "id": "ex-0125",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Aisha,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nRaj",
+          "gold_reply": "Hi Raj,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Friday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nAisha",
+          "score": 0.7735
+        },
+        {
+          "id": "ex-0059",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Tom,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nRaj",
+          "gold_reply": "Hi Raj,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Thursday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nTom",
+          "score": 0.7628
+        },
+        {
+          "id": "ex-0108",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Daniel,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Thursday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nDaniel",
+          "score": 0.7471
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9935,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.5,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.4338,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8154,
+      "passed": true,
+      "explanation": "Final score 0.82 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected. Reply drifts from the sender's core intent."
+    },
+    {
+      "id": "ex-0211",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-1919 for $8,750 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nHana — Northwind Labs",
+      "gold_reply": "Hi Hana,\n\nThanks for flagging invoice INV-1919. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nAisha\nBilling",
+      "generated_reply": "Hi Hana,\n\nThanks for flagging invoice INV-1919. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0054",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9695 for $8,750 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nJames — Copperline",
+          "gold_reply": "Hi James,\n\nThanks for flagging invoice INV-9695. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+          "score": 0.9496
+        },
+        {
+          "id": "ex-0044",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-7576 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nPriya — Fernpath",
+          "gold_reply": "Hi Priya,\n\nThanks for flagging invoice INV-7576. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9489
+        },
+        {
+          "id": "ex-0130",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-1647 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nDaniel — Acme Retail",
+          "gold_reply": "Hi Daniel,\n\nThanks for flagging invoice INV-1647. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSofia\nBilling",
+          "score": 0.9456
+        },
+        {
+          "id": "ex-0014",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-8474 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Harbor & Co",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-8474. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nRaj\nBilling",
+          "score": 0.9449
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.998,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9654,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9944,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0157",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-2294 for $8,750 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nNina — Orbit Logistics",
+      "gold_reply": "Hi Nina,\n\nThanks for flagging invoice INV-2294. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSofia\nBilling",
+      "generated_reply": "Hi Nina,\n\nThanks for flagging invoice INV-2294. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $8,750. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0201",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-3395 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nAisha — Orbit Logistics",
+          "gold_reply": "Hi Aisha,\n\nThanks for flagging invoice INV-3395. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9561
+        },
+        {
+          "id": "ex-0014",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-8474 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Harbor & Co",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-8474. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nRaj\nBilling",
+          "score": 0.9557
+        },
+        {
+          "id": "ex-0044",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-7576 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nPriya — Fernpath",
+          "gold_reply": "Hi Priya,\n\nThanks for flagging invoice INV-7576. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9549
+        },
+        {
+          "id": "ex-0034",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-6926 for $2,400 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Copperline",
+          "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-6926. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $2,400. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nElena\nBilling",
+          "score": 0.9548
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9235,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8585,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9635,
+      "passed": true,
+      "explanation": "Final score 0.96 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0089",
+      "category": "follow_up",
+      "incoming_email": "Hi Tom,\n\nJust following up on the proposal I sent about 5 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nElena",
+      "gold_reply": "Hi Elena,\n\nThanks for the nudge and apologies for the delay on the proposal. It's currently with our team for review, and I expect to have a clear answer for you by Wednesday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nTom",
+      "generated_reply": "Hi Elena,\n\nThanks for the nudge and apologies for the delay on the proposal. It's currently with our team for review, and I expect to have a clear answer for you soon. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nTom",
+      "retrieved_examples": [
+        {
+          "id": "ex-0171",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Elena,\n\nJust following up on the proposal I sent about 10 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nThanks for the nudge and apologies for the delay on the proposal. It's currently with our team for review, and I expect to have a clear answer for you by Wednesday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nElena",
+          "score": 0.9883
+        },
+        {
+          "id": "ex-0125",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Aisha,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nRaj",
+          "gold_reply": "Hi Raj,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Friday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nAisha",
+          "score": 0.746
+        },
+        {
+          "id": "ex-0059",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Tom,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nRaj",
+          "gold_reply": "Hi Raj,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Thursday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nTom",
+          "score": 0.7392
+        },
+        {
+          "id": "ex-0049",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Elena,\n\nJust following up on the contract draft I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nThanks for the nudge and apologies for the delay on the contract draft. It's currently with our team for review, and I expect to have a clear answer for you by Friday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nElena",
+          "score": 0.7387
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9917,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.5,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.4192,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8129,
+      "passed": true,
+      "explanation": "Final score 0.81 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected. Reply drifts from the sender's core intent."
+    },
+    {
+      "id": "ex-0042",
+      "category": "customer_support",
+      "incoming_email": "Hi support,\n\nthe sync engine has been failing to load since yesterday and it's blocking my team. This is urgent. Can you help?\n\nSarah",
+      "gold_reply": "Hi Sarah,\n\nSorry for the disruption — I've opened ticket #55089 and our team is investigating the sync engine failing to load. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nRaj\nCustomer Support",
+      "generated_reply": "Hi Sarah,\n\nSorry for the disruption — I've opened a ticket and our team is investigating the sync engine failing to load. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\n[Your Name]\nCustomer Support",
+      "retrieved_examples": [
+        {
+          "id": "ex-0062",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe sync engine has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nSorry for the disruption — I've opened ticket #94339 and our team is investigating the sync engine syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nMei\nCustomer Support",
+          "score": 0.9122
+        },
+        {
+          "id": "ex-0184",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe billing portal has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nSorry for the disruption — I've opened ticket #35865 and our team is investigating the billing portal syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nHana\nCustomer Support",
+          "score": 0.6636
+        },
+        {
+          "id": "ex-0138",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe billing portal has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nSorry for the disruption — I've opened ticket #14469 and our team is investigating the billing portal syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nTom\nCustomer Support",
+          "score": 0.6624
+        },
+        {
+          "id": "ex-0111",
+          "category": "customer_support",
+          "intent": "acknowledge_and_troubleshoot",
+          "tone": "empathetic-professional",
+          "incoming_email": "Hi support,\n\nthe mobile SDK has been syncing very slowly since yesterday and it's blocking my team. This is urgent. Can you help?\n\nNina",
+          "gold_reply": "Hi Nina,\n\nSorry for the disruption — I've opened ticket #10228 and our team is investigating the mobile SDK syncing very slowly. As an immediate workaround, please clear the app cache and retry; I'll update you within 4 hours with a root cause. Could you confirm your account email and roughly when the issue started?\n\nBest,\nDaniel\nCustomer Support",
+          "score": 0.651
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9324,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8518,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8659,
+      "passed": true,
+      "explanation": "Final score 0.87 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0134",
+      "category": "complaint_escalation",
+      "incoming_email": "This is the third time I've written about the billing portal losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nSarah",
+      "gold_reply": "Hi Sarah,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #46517 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nLucas\nCustomer Success",
+      "generated_reply": "Hi Sarah,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\n[Your Name]\nCustomer Success",
+      "retrieved_examples": [
+        {
+          "id": "ex-0161",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the billing portal losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nElena",
+          "gold_reply": "Hi Elena,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #75336 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nDaniel\nCustomer Success",
+          "score": 0.998
+        },
+        {
+          "id": "ex-0180",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the billing portal losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #85732 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nPriya\nCustomer Success",
+          "score": 0.998
+        },
+        {
+          "id": "ex-0088",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the billing portal losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nHana",
+          "gold_reply": "Hi Hana,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #46559 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nPriya\nCustomer Success",
+          "score": 0.9682
+        },
+        {
+          "id": "ex-0048",
+          "category": "complaint_escalation",
+          "intent": "de_escalate_and_own",
+          "tone": "apologetic-accountable",
+          "incoming_email": "This is the third time I've written about the API gateway losing my data and no one has fixed it. I'm extremely frustrated and considering cancelling our contract. I expect this resolved today.\n\nBen",
+          "gold_reply": "Hi Ben,\n\nI'm sorry — this should never have taken three messages, and I understand your frustration. I'm escalating this to our senior engineering team now under priority ticket #13669 and will personally own it until it's resolved. I'll call you today with a concrete update. Could you confirm the best number to reach you?\n\nSincerely,\nElena\nCustomer Success",
+          "score": 0.7097
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9741,
+        "required_fact_coverage": 0.6667,
+        "must_include_coverage": 0.6667,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.692,
+        "tone_match": 1.0,
+        "helpfulness": 0.9,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.8503,
+      "passed": true,
+      "explanation": "Final score 0.85 (PASS, threshold 0.70). Partial fact coverage (67%) — some required details are missing. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0140",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-4283 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nPriya — Fernpath",
+      "gold_reply": "Hi Priya,\n\nThanks for flagging invoice INV-4283. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nElena\nBilling",
+      "generated_reply": "Hi Priya,\n\nThanks for flagging invoice INV-4283. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\n[Your Name]\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0094",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-4767 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nMei — Harbor & Co",
+          "gold_reply": "Hi Mei,\n\nThanks for flagging invoice INV-4767. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSarah\nBilling",
+          "score": 0.9636
+        },
+        {
+          "id": "ex-0201",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-3395 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nAisha — Orbit Logistics",
+          "gold_reply": "Hi Aisha,\n\nThanks for flagging invoice INV-3395. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nHana\nBilling",
+          "score": 0.9625
+        },
+        {
+          "id": "ex-0148",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-2437 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Quill Media",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-2437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nLucas\nBilling",
+          "score": 0.9606
+        },
+        {
+          "id": "ex-0014",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-8474 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Harbor & Co",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-8474. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nRaj\nBilling",
+          "score": 0.9597
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9903,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.968,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9933,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0115",
+      "category": "event_logistics",
+      "incoming_email": "Hi,\n\nI'm finalizing details for the team offsite. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nBen",
+      "gold_reply": "Hi Ben,\n\nConfirmed for the team offsite: we're expecting 12 attendees, and the start time is 2:30 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Wednesday. Let me know if the caterer needs anything else from us.\n\nBest,\nNina",
+      "generated_reply": "Hi Ben,\n\nConfirmed for the team offsite: we're expecting 60 attendees, and the start time is 4:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Wednesday. Let me know if the caterer needs anything else from us.\n\nBest,\nTom",
+      "retrieved_examples": [
+        {
+          "id": "ex-0204",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the team offsite. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nJames",
+          "gold_reply": "Hi James,\n\nConfirmed for the team offsite: we're expecting 60 attendees, and the start time is 4:00 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Wednesday. Let me know if the caterer needs anything else from us.\n\nBest,\nTom",
+          "score": 0.9991
+        },
+        {
+          "id": "ex-0037",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the team offsite. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nNina",
+          "gold_reply": "Hi Nina,\n\nConfirmed for the team offsite: we're expecting 25 attendees, and the start time is 2:30 PM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Tuesday. Let me know if the caterer needs anything else from us.\n\nBest,\nTom",
+          "score": 0.9979
+        },
+        {
+          "id": "ex-0017",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the team offsite. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nSofia",
+          "gold_reply": "Hi Sofia,\n\nConfirmed for the team offsite: we're expecting 60 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Friday. Let me know if the caterer needs anything else from us.\n\nBest,\nCarlos",
+          "score": 0.9967
+        },
+        {
+          "id": "ex-0087",
+          "category": "event_logistics",
+          "intent": "confirm_event_details",
+          "tone": "organized-professional",
+          "incoming_email": "Hi,\n\nI'm finalizing details for the launch dinner. Can you confirm the headcount, start time, and whether we need any dietary accommodations?\n\nThanks,\nLucas",
+          "gold_reply": "Hi Lucas,\n\nConfirmed for the launch dinner: we're expecting 40 attendees, and the start time is 9:00 AM. Please plan for 3 vegetarian and 2 gluten-free meals. I'll share the final rooming and agenda by Tuesday. Let me know if the caterer needs anything else from us.\n\nBest,\nElena",
+          "score": 0.8621
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9949,
+        "required_fact_coverage": 0.3333,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.5624,
+        "tone_match": 1.0,
+        "helpfulness": 0.8,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.7367,
+      "passed": true,
+      "explanation": "Final score 0.74 (PASS, threshold 0.70). Poor fact coverage (33%); key details are absent. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0219",
+      "category": "sales_demo",
+      "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Copperline and the mobile SDK looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nJames Kowalski",
+      "gold_reply": "Hi James,\n\nGreat to hear Copperline is exploring the mobile SDK. I'd love to run a 30-minute demo — would Wednesday at 10:30 AM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nBen\nSales",
+      "generated_reply": "Hi James,\n\nGreat to hear Copperline is exploring the mobile SDK. I'd love to run a 30-minute demo — would Wednesday at 10:00 AM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nTom\nSales",
+      "retrieved_examples": [
+        {
+          "id": "ex-0073",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Acme Retail and the mobile SDK looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nAisha Patel",
+          "gold_reply": "Hi Aisha,\n\nGreat to hear Acme Retail is exploring the mobile SDK. I'd love to run a 30-minute demo — would Monday at 2:30 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nTom\nSales",
+          "score": 0.9147
+        },
+        {
+          "id": "ex-0192",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Quill Media and the mobile SDK looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nPriya Nguyen",
+          "gold_reply": "Hi Priya,\n\nGreat to hear Quill Media is exploring the mobile SDK. I'd love to run a 30-minute demo — would Monday at 2:30 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nCarlos\nSales",
+          "score": 0.8717
+        },
+        {
+          "id": "ex-0129",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Acme Retail and the API gateway looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nSofia Andersen",
+          "gold_reply": "Hi Sofia,\n\nGreat to hear Acme Retail is exploring the API gateway. I'd love to run a 30-minute demo — would Tuesday at 10:30 AM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nTom\nSales",
+          "score": 0.7334
+        },
+        {
+          "id": "ex-0121",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Acme Retail and the API gateway looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nDaniel Nguyen",
+          "gold_reply": "Hi Daniel,\n\nGreat to hear Acme Retail is exploring the API gateway. I'd love to run a 30-minute demo — would Friday at 2:30 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nOmar\nSales",
+          "score": 0.7332
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9975,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.5161,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.7769,
+      "passed": true,
+      "explanation": "Final score 0.78 (PASS, threshold 0.70). All required facts are present. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0074",
+      "category": "invoice_payment",
+      "incoming_email": "Hello,\n\nWe received invoice INV-7844 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Copperline",
+      "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-7844. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nNina\nBilling",
+      "generated_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-7844. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nElena\nBilling",
+      "retrieved_examples": [
+        {
+          "id": "ex-0034",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-6926 for $2,400 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Copperline",
+          "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-6926. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $2,400. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nElena\nBilling",
+          "score": 0.9778
+        },
+        {
+          "id": "ex-0024",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-9758 for $3,600 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nSarah — Quill Media",
+          "gold_reply": "Hi Sarah,\n\nThanks for flagging invoice INV-9758. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $3,600. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nMei\nBilling",
+          "score": 0.9661
+        },
+        {
+          "id": "ex-0094",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-4767 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nMei — Harbor & Co",
+          "gold_reply": "Hi Mei,\n\nThanks for flagging invoice INV-4767. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nSarah\nBilling",
+          "score": 0.964
+        },
+        {
+          "id": "ex-0148",
+          "category": "invoice_payment",
+          "intent": "resolve_invoice_discrepancy",
+          "tone": "precise-professional",
+          "incoming_email": "Hello,\n\nWe received invoice INV-2437 for $1,200 but the PO number is missing and one line item looks duplicated. Could you review before we process payment?\n\nThanks,\nCarlos — Quill Media",
+          "gold_reply": "Hi Carlos,\n\nThanks for flagging invoice INV-2437. You're right — I've removed the duplicated line item and added your PO number, so the corrected total is $1,200. A revised copy is attached, and payment terms remain net-30. Please let me know if anything else needs adjusting.\n\nBest,\nLucas\nBilling",
+          "score": 0.9629
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9996,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.9378,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.9906,
+      "passed": true,
+      "explanation": "Final score 0.99 (PASS, threshold 0.70). All required facts are present. No ungrounded specifics detected."
+    },
+    {
+      "id": "ex-0163",
+      "category": "scheduling",
+      "incoming_email": "Hi Tom,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nSofia",
+      "gold_reply": "Hi Sofia,\n\nHappy to meet about the integration review. Friday at 9:00 AM CET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nTom",
+      "generated_reply": "Hi Sofia,\n\nHappy to meet about the integration review. Wednesday at 2:00 PM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nTom",
+      "retrieved_examples": [
+        {
+          "id": "ex-0080",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Daniel,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nSofia",
+          "gold_reply": "Hi Sofia,\n\nHappy to meet about the integration review. Thursday at 2:30 PM GMT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nDaniel",
+          "score": 0.9988
+        },
+        {
+          "id": "ex-0010",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Tom,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nLucas",
+          "gold_reply": "Hi Lucas,\n\nHappy to meet about the integration review. Tuesday at 10:30 AM ET works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nTom",
+          "score": 0.9974
+        },
+        {
+          "id": "ex-0060",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Ben,\n\nCould we find 30 minutes this week to discuss the integration review? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nMei",
+          "gold_reply": "Hi Mei,\n\nHappy to meet about the integration review. Monday at 2:30 PM GMT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nBen",
+          "score": 0.9964
+        },
+        {
+          "id": "ex-0144",
+          "category": "scheduling",
+          "intent": "propose_meeting_time",
+          "tone": "friendly-professional",
+          "incoming_email": "Hi Priya,\n\nCould we find 30 minutes this week to discuss onboarding? I'm fairly flexible but afternoons work best for me. Let me know what suits you.\n\nThanks,\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nHappy to meet about onboarding. Tuesday at 1:00 PM PT works well on my end — I'll send a calendar invite with a video link. If that time doesn't suit you, just share a couple of afternoon slots and I'll adjust.\n\nBest,\nPriya",
+          "score": 0.6976
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9283,
+        "required_fact_coverage": 0.5,
+        "must_include_coverage": 0.3333,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.8595,
+        "tone_match": 1.0,
+        "helpfulness": 0.85,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.6671,
+      "passed": false,
+      "explanation": "Final score 0.67 (FAIL, threshold 0.70). Partial fact coverage (50%) — some required details are missing. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0033",
+      "category": "sales_demo",
+      "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Lumen Health and the billing portal looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nMei Patel",
+      "gold_reply": "Hi Mei,\n\nGreat to hear Lumen Health is exploring the billing portal. I'd love to run a 30-minute demo — would Tuesday at 4:00 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nNina\nSales",
+      "generated_reply": "Hi Mei,\n\nGreat to hear Lumen Health is exploring the billing portal. I'd love to run a 30-minute demo — would Wednesday at 2:00 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\n[Your Name]\nSales",
+      "retrieved_examples": [
+        {
+          "id": "ex-0200",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Lumen Health and the reporting module looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nSofia Silva",
+          "gold_reply": "Hi Sofia,\n\nGreat to hear Lumen Health is exploring the reporting module. I'd love to run a 30-minute demo — would Thursday at 1:00 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nDaniel\nSales",
+          "score": 0.8388
+        },
+        {
+          "id": "ex-0185",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Orbit Logistics and the Analytics dashboard looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nMei Chen",
+          "gold_reply": "Hi Mei,\n\nGreat to hear Orbit Logistics is exploring the Analytics dashboard. I'd love to run a 30-minute demo — would Friday at 2:30 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nRaj\nSales",
+          "score": 0.7427
+        },
+        {
+          "id": "ex-0129",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Acme Retail and the API gateway looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nSofia Andersen",
+          "gold_reply": "Hi Sofia,\n\nGreat to hear Acme Retail is exploring the API gateway. I'd love to run a 30-minute demo — would Tuesday at 10:30 AM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nTom\nSales",
+          "score": 0.742
+        },
+        {
+          "id": "ex-0166",
+          "category": "sales_demo",
+          "intent": "book_demo_and_address_pricing",
+          "tone": "enthusiastic-professional",
+          "incoming_email": "Hi,\n\nWe're evaluating tools for our team at Orbit Logistics and the Analytics dashboard looks promising. Could we set up a demo? We're especially interested in pricing for around 40 seats.\n\nMei Kowalski",
+          "gold_reply": "Hi Mei,\n\nGreat to hear Orbit Logistics is exploring the Analytics dashboard. I'd love to run a 30-minute demo — would Thursday at 1:00 PM work? I'll tailor it to a 40-seat setup and walk through pricing options on the call. In the meantime, is there a specific workflow you'd like us to focus on?\n\nBest,\nElena\nSales",
+          "score": 0.7414
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9942,
+        "required_fact_coverage": 1.0,
+        "must_include_coverage": 1.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.5919,
+        "tone_match": 1.0,
+        "helpfulness": 1.0,
+        "safety_no_hallucination": 0.0,
+        "judge_score": null
+      },
+      "final_score": 0.7876,
+      "passed": true,
+      "explanation": "Final score 0.79 (PASS, threshold 0.70). All required facts are present. Possible ungrounded specifics detected (safety 0%)."
+    },
+    {
+      "id": "ex-0162",
+      "category": "follow_up",
+      "incoming_email": "Hi Omar,\n\nJust following up on my application I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nSofia",
+      "gold_reply": "Hi Sofia,\n\nThanks for the nudge and apologies for the delay on my application. It's currently with our team for review, and I expect to have a clear answer for you by Thursday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nOmar",
+      "generated_reply": "Hi Sofia,\n\nThanks for the nudge and apologies for the delay on your application. It's currently with our team for review, and I expect to have a clear answer for you by Friday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nOmar",
+      "retrieved_examples": [
+        {
+          "id": "ex-0181",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Sofia,\n\nJust following up on my application I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nCarlos",
+          "gold_reply": "Hi Carlos,\n\nThanks for the nudge and apologies for the delay on my application. It's currently with our team for review, and I expect to have a clear answer for you by Monday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nSofia",
+          "score": 0.9878
+        },
+        {
+          "id": "ex-0029",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Sarah,\n\nJust following up on my application I sent about 5 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nDaniel",
+          "gold_reply": "Hi Daniel,\n\nThanks for the nudge and apologies for the delay on my application. It's currently with our team for review, and I expect to have a clear answer for you by Wednesday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nSarah",
+          "score": 0.9763
+        },
+        {
+          "id": "ex-0099",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Tom,\n\nJust following up on my application I sent about 7 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nAisha",
+          "gold_reply": "Hi Aisha,\n\nThanks for the nudge and apologies for the delay on my application. It's currently with our team for review, and I expect to have a clear answer for you by Thursday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nTom",
+          "score": 0.975
+        },
+        {
+          "id": "ex-0079",
+          "category": "follow_up",
+          "intent": "acknowledge_follow_up",
+          "tone": "courteous-professional",
+          "incoming_email": "Hi Sarah,\n\nJust following up on my application I sent about 14 days ago. I haven't heard back and wanted to check whether you need anything else from me.\n\nThanks,\nSarah",
+          "gold_reply": "Hi Sarah,\n\nThanks for the nudge and apologies for the delay on my application. It's currently with our team for review, and I expect to have a clear answer for you by Tuesday. Nothing further is needed from you right now — I'll follow up as soon as I hear back.\n\nBest,\nSarah",
+          "score": 0.9705
+        }
+      ],
+      "metrics": {
+        "semantic_similarity": 0.9867,
+        "required_fact_coverage": 0.3333,
+        "must_include_coverage": 0.0,
+        "must_not_include_violation": 0.0,
+        "intent_alignment": 0.4481,
+        "tone_match": 1.0,
+        "helpfulness": 0.8,
+        "safety_no_hallucination": 1.0,
+        "judge_score": null
+      },
+      "final_score": 0.7179,
+      "passed": true,
+      "explanation": "Final score 0.72 (PASS, threshold 0.70). Poor fact coverage (33%); key details are absent. No ungrounded specifics detected. Reply drifts from the sender's core intent."
+    }
+  ]
+}
